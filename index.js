@@ -14,7 +14,11 @@ dotenv.config({});
 // call database connection here
 connectDB();
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://edu-sprint-ui-jksr.vercel.app',
+    credentials: true
+  }));
 
 const PORT = process.env.PORT || 3000;
 
