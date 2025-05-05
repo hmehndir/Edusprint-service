@@ -14,6 +14,7 @@ dotenv.config({});
 // call database connection here
 connectDB();
 const app = express();
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,7 +22,6 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors());
  
 // apis
 app.use("/api/v1/media", mediaRoute);
